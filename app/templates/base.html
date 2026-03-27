@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Экзамен Марков</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark">
+<div class="container">
+
+<a class="navbar-brand" href="/properties">
+Real Estate System
+</a>
+
+<div>
+
+<a class="btn btn-outline-light" href="/properties">Каталог</a>
+<a class="btn btn-outline-light" href="/add_property">Добавить</a>
+<a class="btn btn-outline-light" href="/logout">Выход</a>
+
+</div>
+
+</div>
+</nav>
+
+<div class="container mt-4">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+</body>
+</html>

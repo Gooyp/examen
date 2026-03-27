@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Редактировать объект</h2>
+
+<form method="POST" class="card p-4">
+
+<div class="mb-3">
+<label class="form-label">Название</label>
+<input class="form-control" type="text" name="title" value="{{ property.title }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Тип</label>
+<input class="form-control" type="text" name="type" value="{{ property.type }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Цена</label>
+<input class="form-control" type="number" name="price" value="{{ property.price }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Площадь</label>
+<input class="form-control" type="number" name="area" value="{{ property.area }}">
+</div>
+
+<button class="btn btn-primary">Сохранить</button>
+
+</form>
+
+{% endblock %}

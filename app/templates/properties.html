@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Каталог недвижимости</h2>
+
+<form class="row mb-4">
+
+<div class="col">
+<input class="form-control" type="number" name="min_price" placeholder="Мин цена">
+</div>
+
+<div class="col">
+<input class="form-control" type="number" name="max_price" placeholder="Макс цена">
+</div>
+
+<div class="col">
+<button class="btn btn-primary">Фильтр</button>
+</div>
+
+</form>
+
+<div class="alert alert-info">
+Всего объектов: {{ properties|length }}
+</div>
+
+<table class="table table-striped">
+
+<tr>
+<th>ID</th>
+<th>Название</th>
+<th>Тип</th>
+<th>Цена</th>
+<th>Площадь</th>
+<th></th>
+<th></th>
+</tr>
+
+{% for property in properties %}
+
+<tr>
+
+<td>{{ property.id }}</td>
+<td>{{ property.title }}</td>
+<td>{{ property.type }}</td>
+<td>{{ property.price }}</td>
+<td>{{ property.area }}</td>
+
+<td>
+<a class="btn btn-warning btn-sm"
+href="/edit_property/{{ property.id }}">
+Редактировать
+</a>
+</td>
+
+<td>
+<a class="btn btn-danger btn-sm"
+href="/delete_property/{{ property.id }}">
+Удалить
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
